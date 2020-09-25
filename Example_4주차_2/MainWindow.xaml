@@ -1,0 +1,64 @@
+﻿<Window x:Class="Example_4주차_2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Example_4주차_2"
+        mc:Ignorable="d"
+        x:Name="WindowBubbling"
+        Title="Router_Bubbling" Height="480" Width="340">
+    <Grid Height="450">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="60*"/>
+        </Grid.RowDefinitions>
+        
+        <Button x:Name="btnSmile"
+                Margin="10, 10, 10, 10"
+                Click="btnSmile_Click">
+            <Grid Height="120" Width="250">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50*"/>
+                    <ColumnDefinition Width="50*"/>
+                </Grid.ColumnDefinitions>
+                <Canvas Height="100" Grid.Column="0">
+                    <Ellipse Canvas.Left="12"
+                             Canvas.Top="0"
+                             Width="100"
+                             Height="100"
+                             Fill="Yellow"
+                             Stroke="Black"
+                             MouseDown="ImageClicked"/>
+                    <Ellipse Canvas.Left="35"
+                             Canvas.Top="25"
+                             Width="16"
+                             Height="25"
+                             Fill="Black"
+                             Stroke="Black"
+                             MouseDown="ImageClicked" />
+                    <Ellipse Canvas.Left="75"
+                             Canvas.Top="25"
+                             Width="16"
+                             Height="25"
+                             Fill="Black"
+                             Stroke="Black"
+                             MouseDown="ImageClicked" />
+                    <Path Data="M 30,65 A 33,23 0 0 0 95, 65" 
+                          Stroke="Black"
+                          StrokeThickness="3"
+                          MouseDown="ImageClicked"/>
+                </Canvas>
+                <TextBox Text="Smile 버튼"
+                         Grid.Column="1"
+                         FontSize="20"
+                         FontWeight="Bold"
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Center"/>
+            </Grid>
+        </Button>
+        <ListBox Grid.Row="1"
+                 Name="IstMessages" 
+                 Background="Black"
+                 Foreground="White"/>
+    </Grid>
+</Window>
